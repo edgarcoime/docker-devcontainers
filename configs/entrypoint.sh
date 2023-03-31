@@ -1,13 +1,20 @@
-#!/bin/sh -x
+#!/usr/bin/dumb-init /bin/sh
+
+# Fill in runtime values for configuration
+# https://www.warp.dev/terminus/dockerfile-run-sh
 
 # .env
-sed -e "s|env_port|$OS_ENV_PORT|g" \
-    -e "s|env_secret|$OS_ENV_SECRET|g" \
-    -e "s|env_token_secret|$OS_ENV_TOKEN_SECRET|g" \
-    .env.tpl > .env
+sed -e "s|@ENV_PORT@|$ENV_PORT|g" \
+    -e "s|@ENV_SECRET@|$ENV_SECRET|g" \
+    -e "s|@ENV_TOKEN_SECRET@|$ENV_TOKEN_SECRET|g" \
+    /usr/app/configs/.env.tpl > /usr/app/configs/.env
 
 
 # config.json
-sed -e "s|env_user|$OS_ENV_USER|g" \
-    -e "s|env_pass|$OS_ENV_PASS|g" \
-    config.json.tpl > config.json
+sed -e "s|@ENV_USER@|$ENV_USER|g" \
+    -e "s|@ENV_PASS@|$ENV_PASS|g" \
+    /usr/app/configs/config.json.tpl > /usr/app/configs/config.json
+
+# Run the main container command
+# APPLICATION ENTRY POINT
+dumb-init node /usr/app/client/server.js

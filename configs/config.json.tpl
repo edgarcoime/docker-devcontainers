@@ -1,21 +1,21 @@
 {
     "development": {
-        "username": "env_user",
-        "password": "env_pass",
+        "username": "@ENV_USER@",
+        "password": "@ENV_PASS@",
         "database": "cred_dev",
         "host": "127.0.0.1",
         "dialect": "mysql"
     },
     "test": {
-        "username": "env_user",
-        "password": "env_pass",
+        "username": "@ENV_USER@",
+        "password": "@ENV_PASS@",
         "database": "cred_test",
         "host": "127.0.0.1",
         "dialect": "mysql"
     },
     "production": {
-        "username": "env_user",
-        "password": "env_pass",
+        "username": "@ENV_USER@",
+        "password": "@ENV_PASS@",
         "database": "cred_prod",
         "host": "127.0.0.1",
         "dialect": "mysql"

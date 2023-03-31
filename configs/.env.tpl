@@ -1,3 +1,3 @@
-PORT=env_port
-SECRET=env_secret
-TOKEN_SECRET=env_token_secret
+PORT=@ENV_PORT@
+SECRET=@ENV_SECRET@
+TOKEN_SECRET=@ENV_TOKEN_SECRET@
