@@ -1,0 +1,3 @@
+PORT=env_port
+SECRET=env_secret
+TOKEN_SECRET=env_token_secret
