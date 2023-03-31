@@ -1,14 +1,13 @@
 #!/bin/sh -x
 
 # .env
-sed -e "s|env_port|$P9K_TTY|g" \
-    -e "s|env_secret|$TERM_PROGRAM|g" \
-    -e "s|env_token_secret|$WSL_DISTRO_NAME|g" \
+sed -e "s|env_port|$OS_ENV_PORT|g" \
+    -e "s|env_secret|$OS_ENV_SECRET|g" \
+    -e "s|env_token_secret|$OS_ENV_TOKEN_SECRET|g" \
     .env.tpl > .env
 
 
-
 # config.json
-sed -e "s|env_user|$P9K_TTY|g" \
-    -e "s|env_pass|$TERM_PROGRAM|g" \
+sed -e "s|env_user|$OS_ENV_USER|g" \
+    -e "s|env_pass|$OS_ENV_PASS|g" \
     config.json.tpl > config.json

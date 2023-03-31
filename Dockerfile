@@ -40,3 +40,5 @@ EXPOSE 3000
 ENV PORT 3000
 
 CMD ["node", "server.js"]
+
+# https://stackoverflow.com/questions/60800742/should-config-be-built-into-a-docker-image-best-practice
